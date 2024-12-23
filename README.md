@@ -91,12 +91,12 @@ The Gateway will route requests to either `microservice-commandes` or `microserv
 ### 5. **Access the Application**
 
 - **API Gateway**: The gateway can be accessed at `http://localhost:9005/`.
-  - Access the commandes: `http://localhost:9005/commandes/produits`
-  - Access the produits: `http://localhost:9005/produits`
+  - Access the commandes: `http://localhost:9005/microservice-commandes/commandes/produits`
+  - Access the produits: `http://localhost:9005/microservice-products/produits`
 
 ### 6. **Circuit Breaker in Action**
 
-- When calling `http://localhost:9005/commandes/produits`, if **microservice-produits** is delayed (due to the `Thread.sleep(5000)`), the Circuit Breaker will trigger, and the fallback response will be shown:
+- When calling `http://localhost:9005/microservice-commandes/commandes/produits`, if **microservice-produits** is delayed (due to the `Thread.sleep(5000)`), the Circuit Breaker will trigger, and the fallback response will be shown:
 
   ```json
   ["Service unavailable, try again later"]
